@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>GREEN-API Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .input-group button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .input-group button:hover {
+            background-color: #45a049;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="input-group">
+        <label for="idInstance">idInstance</label>
+        <input type="text" id="idInstance" placeholder="Введите idInstance">
+    </div>
+    <div class="input-group">
+        <label for="apiTokenInstance">ApiTokenInstance</label>
+        <input type="text" id="apiTokenInstance" placeholder="Введите ApiTokenInstance">
+    </div>
+    <div class="input-group">
+        <button onclick="getSettings()">getSettings</button>
+    </div>
+    <div class="input-group">
+        <button onclick="getStateInstance()">getStateInstance</button>
+    </div>
+    <div class="input-group">
+        <input type="text" id="phoneNumber" placeholder="Введите номер телефона">
+        <textarea id="message" placeholder="Введите сообщение"></textarea>
+        <button onclick="sendMessage()">sendMessage</button>
+    </div>
+    <div class="input-group">
+        <input type="text" id="phoneNumberFile" placeholder="Введите номер телефона">
+        <input type="text" id="fileUrl" placeholder="Введите URL файла">
+        <button onclick="sendFileByUrl()">sendFileByUrl</button>
+    </div>
+    <div id="response" class="response">
+        <strong>Ответ:</strong>
+        <pre id="responseText"></pre>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
